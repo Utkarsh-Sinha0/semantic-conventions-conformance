@@ -65,6 +65,4 @@ def test_entity_identity_attributes_have_required_levels(model) -> None:
         "process.runtime.name": "required",
         "process.runtime.version": "required",
     }
-    assert entity["description"] == {
-        "process.runtime.description": "recommended"
-    }
+    assert entity["description"] == {"process.runtime.description": "recommended"}
