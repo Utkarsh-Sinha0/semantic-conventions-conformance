@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: Utkarsh-Sinha0/opentelemetry-python-genai
-          ref: 75e3a4cbdd533f149e35d63ba9ab0ddb479c343a
+          ref: 8e3f8857fd6f43d43c463f6e6a56a8fdce2027f2
           persist-credentials: false
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
@@ -61,6 +61,7 @@ jobs:
           python -m ruff check scripts/generate_requirements.py scripts/tests/test_generate_requirements.py
           python -m ruff format --check scripts/generate_requirements.py scripts/tests/test_generate_requirements.py
       - name: Generate real pinned requirements
+        if: success() || failure()
         env:
           TOX_ENV: ${{ matrix.environment }}
         run: |
