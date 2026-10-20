@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: Utkarsh-Sinha0/opentelemetry-python-genai
-          ref: 85d7ee4bbfbf51820d799e264aa687eec79dc20f
+          ref: 75e3a4cbdd533f149e35d63ba9ab0ddb479c343a
           persist-credentials: false
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
