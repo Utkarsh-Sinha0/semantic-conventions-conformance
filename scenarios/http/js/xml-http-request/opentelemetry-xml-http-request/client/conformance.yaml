@@ -4,12 +4,11 @@
 runner: http-conformance
 instrumented_library: xml-http-request
 instrumentation_library: "@opentelemetry/instrumentation-xml-http-request"
+scenario_contract: ../../../../../../tools/http/test-client/contract.yaml
 
 setup: otel-conformance-js install
 
 server:
   run: http-mock-server --port ${PORT}
 
-scenarios:
-  client:
-    run: node ../client.js
+scenario_run: node ../client.js
